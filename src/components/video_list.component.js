@@ -4,13 +4,13 @@ export default class VideoList extends Component {
     constructor(props) {
         super(props);
     }
-
+    
     renderItems = () => {
         return this.props.videos.map((video) => {
         const { title } = video.snippet;
         const imageUrl = video.snippet.thumbnails.default.url;
           return(
-                <li key={video.etag}  className="list-group-item">
+                <li key={video.etag} onClick={() => this.props.onVideoSelected(video)}  className="list-group-item">
                     <div className="video-list media">
                     <div className="media-left">
                         <img className="media-object" src={imageUrl} />
@@ -23,6 +23,7 @@ export default class VideoList extends Component {
             )
         })
     }
+
     render() {
         if(!this.props.videos.length > 0) {
             return(
