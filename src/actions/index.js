@@ -14,7 +14,6 @@ export function fetchVideos(term) {
 
 export const SELECTED_VIDEO = 'SELECTED_VIDEO';
 export function selectVideo(video) {
-    console.log("action");
     return {
         type : SELECTED_VIDEO,
         payload : video

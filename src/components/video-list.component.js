@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { selectVideo } from '../actions/index';
 
-class VideoList extends Component {
-    
+class VideoList extends Component {    
     renderItems = () => {
         return this.props.videos.map((video) => {
             const imageUrl = video.snippet.thumbnails.default.url;
