@@ -6,9 +6,17 @@ export const FETCH_VIDEOS = 'FETCH_VIDEOS';
 export function fetchVideos(term) {
     const url = search_url + term;
     const request = axios.get(url);
-    console.log(request);
     return {
         type : FETCH_VIDEOS,
         payload : request
+    };
+}
+
+export const SELECTED_VIDEO = 'SELECTED_VIDEO';
+export function selectVideo(video) {
+    console.log("action");
+    return {
+        type : SELECTED_VIDEO,
+        payload : video
     };
 }
