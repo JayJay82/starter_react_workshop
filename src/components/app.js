@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchBar from './searchbar.component';
+import VideoList from './video_list.component';
 import YTSearch from 'youtube-api-search';
 import _ from 'lodash';
 
@@ -10,6 +11,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = { videos : []};
+    this.searchTerm("avengers");
   }
   searchTerm = (term) => {
     YTSearch({key : api_key, term : term} ,(videos) => {
@@ -22,6 +24,7 @@ export default class App extends Component {
     return (
       <div>
         <SearchBar onSearch = { videoSearch } />
+        <VideoList videos = { this.state.videos } />
       </div>
     );
   }
